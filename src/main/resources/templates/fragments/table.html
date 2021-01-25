@@ -1,0 +1,26 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org/"></html>
+<form class="userTable text-center" th:fragment="userTable" style="display:none;">
+    <div class="form-group">
+        <label for="id">ID</label>
+        <input readonly type="text" class="form-control" id="id" name="id" placeholder="ID">
+        <div class="invalid-feedback"></div>
+    </div>
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input readonly type="text" class="form-control" id="username" name="username" placeholder="Username">
+        <div class="invalid-feedback"></div>
+    </div>
+    <div class="form-group">
+        <label for="age">Age</label>
+        <input readonly type="text" class="form-control" id="age" name="age" placeholder="Age">
+    </div>
+    <div class="form-group">
+        <label for="mail">Mail</label>
+        <input readonly type="text" class="form-control" id="mail" name="mail" placeholder="Mail">
+    </div>
+    <div class="form-group">
+        <label for="roles">Roles</label>
+        <select multiple readonly class="form-control" id="roles" name="roles" required>
+        </select>
+    </div>
+</form>

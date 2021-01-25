@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Users</title>
+    <head th:replace="fragments/head :: head"/>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <script type="javascript" src=""></script>
+
+</head>
+<body>
+
+<nav th:replace="fragments/head :: navbar"/>
+
+<div class="container-fluid h-100">
+    <div class="row h-100">
+        <div class="col-md-2 d-none d-md-block mt-4 pl-0 pr-0">
+            <a type="button" class="btn btn-primary btn-lg btn-block mt-0" href="/admin/users">Admin</a>
+            <a type="button" class="btn btn-lg btn-block mt-0" href="/users/user.html">User</a>
+        </div>
+        <div class="col-10 bg-light">
+            <div class="container-fluid">
+                <div class="raw">
+                    <div class="col mt-3">
+                        <h1>Admin panel</h1>
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Users table</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="profile-tab" href="/admin/users/new" role="tab" aria-controls="profile" aria-selected="false">New User</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                <div class="col border border-bottom-0 bg-light p-2">
+                                    <h4 class="mb-0">All users</h4>
+                                </div>
+                                <div class="w-100"></div>
+                                <div class="col p-3 border bg-white text-dark">
+                                    <table class="table table-striped text-center" id="userTable">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col">ID</th>
+                                            <th scope="col">Username</th>
+                                            <th scope="col">Age</th>
+                                            <th scope="col">Email</th>
+                                            <th scope="col">Role</th>
+                                            <th scope="col">Edit</th>
+                                            <th scope="col">Delete</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody class="user_data">
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div th:replace="fragments/modal :: defaultModal"></div>
+<div th:replace="fragments/form :: userForm"></div>
+<div th:replace="fragments/table :: userTable"></div>
+
+<script th:replace="fragments/footer :: script"></script>
+</body>
+
+</html>

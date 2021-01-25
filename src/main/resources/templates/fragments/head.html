@@ -1,0 +1,29 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head">
+
+    <!-- Кодировка веб-страницы -->
+    <meta charset="utf-8">
+    <!-- Настройка viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Подключаем Bootstrap CSS -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style type="text/css">
+        body, html{height:100%}
+    </style>
+</head>
+<body>
+
+<nav th:fragment="navbar" class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand" >
+        <span class="navbar-brand" th:text="${user_auth.getName() + ' with roles: '}"></span>
+        <span class="navbar-brand" th:each="role : ${user_auth.authorities}" th:text="${role.authority.replaceFirst('ROLE_', '') + ' '}"></span>
+    </a>
+    <form class="form-inline">
+        <a th:href="@{/logout}" style="text-decoration: none; color: dimgray" >Logout</a>
+    </form>
+</nav>
+
+</body>
+</html>
